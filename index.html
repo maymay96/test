@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Số chính phương</title>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hiển thị các số chính phương</h1>
+
+    <label for="number1">Nhập số a:</label>
+    <input type="number" id="number1">
+
+    <label for="number2">Nhập số b:</label>
+    <input type="number" id="number2">
+
+    <button onclick="displaySquareNumbers()">Hiển thị số chính phương</button>
+
+    <div id="result"></div>
+
+    <script>
+        function displaySquareNumbers() {
+            var number1 = parseInt(document.getElementById("number1").value);
+            var number2 = parseInt(document.getElementById("number2").value);
+
+            var result = "";
+
+            for (var i = number1; i <= number2; i++) {
+                if (Number.isInteger(Math.sqrt(i))) {
+                    result += i + " ";
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Các số chính phương trong khoảng từ a đến b: " + result;
+        }
+    </script>
+</body>
+</html>
+
